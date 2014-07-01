@@ -1,0 +1,19 @@
+Package: *
+Pin: release a=wheezy
+Pin-Priority: 399
+
+Package: *
+Pin: release a=jessie
+Pin-Priority: 299
+
+Package: *
+Pin: release a=testing
+Pin-Priority: 298
+
+Package: *
+Pin: release a=sid
+Pin-Priority: 199
+
+Package: *
+Pin: release a=unstable
+Pin-Priority: 198
