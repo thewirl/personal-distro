@@ -23,12 +23,12 @@ sudo lb clean
 # pre-configure the base system
 sudo lb config ­-b iso --cache true --apt-recommends --distribution wheezy true -a amd64  --linux-flavour=3.14-1-amd64 --binary-images iso ­­--debian-installer live --mode debian ­--debian­-installer-gui false ­­--archive-areas "main" ­­--security true --win32-loader false ­­--updates true
 # copying base system sources.list
-sudo cp ../sources.list.chroot config/package-lists/$DISTRO.list.chroot
+sudo cp ../sources.list.chroot config/archives/$DISTRO.list.chroot
 # copying base system live.list
-sudo cp ../live.list.chroot config/archives/$DISTRO.list.chroot
+sudo cp ../live.list.chroot config/package-lists/$DISTRO.list.chroot
 # copying base system apt preferences
 sudo cp ../preferences.list.chroot config/archives/$DISTRO.pref.chroot
 # importing Tor keys
 gpg --export A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89 > ../tor.key.chroot
 sudo mv ../tor.key.chroot config/archives/tor.key.chroot
-#sudo lb build
+sudo lb build

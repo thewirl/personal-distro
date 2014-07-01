@@ -23,4 +23,4 @@ deb-src http://ftp.us.debian.org/debian/ sid main
 deb http://deb.torproject.org/torproject.org wheezy main
 deb-src http://deb.torproject.org/torproject.org wheezy main
 
-deb https://github.com/thewirl/deb_packages /.
+deb https://github.com/thewirl/deb_packages ./
