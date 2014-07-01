@@ -22,7 +22,7 @@ fi
 sudo lb clean
 sudo lb init
 # pre-configure the base system
-sudo lb config ­-b iso --cache true --apt-recommends --distribution jessie true -a amd64  --linux-flavour=3.14-1-amd64 --binary-images iso ­­--debian-installer live --mode debian ­--debian­-installer-gui false ­­--archive-areas "main" ­­--security true --win32-loader false ­­--updates true 
+sudo lb config ­-b iso --cache true --apt-recommends true --mirror-bootstrap http://ftp.us.debian.org/debian/ --distribution jessie true -a amd64  --linux-flavour=3.14-1-amd64 --binary-images iso ­­--debian-installer live --mode debian ­--debian­-installer-gui false ­­--archive-areas "main" ­­--security true --win32-loader false­--updates true 
 # copying base system sources.list
 sudo cp ../sources.list.chroot config/archives/$DISTRO.list.chroot
 # copying base system live.list
@@ -33,8 +33,13 @@ sudo cp ../preferences.list.chroot config/archives/$DISTRO.pref.chroot
 sudo mkdir -p config/includes.chroot/etc/ferm/
 sudo cp ../ferm.conf config/includes.chroot/etc/ferm/ferm.conf
 # creating /etc/skel directory
-# sudo mkdir -p config/includes.chroot/etc/skel/
+sudo mkdir -p config/includes.chroot/etc/skel/
+sudo cp ../conkyrc config/includes.chroot/etc/skel/.conkyrc
+sudo cp ../updatetbb.sh config/includes.chroot/etc/skel/updatetbb.sh
+sudo mkdir -p config/includes.chroot/usr/share/applications
+sudo cp ../torbrowser.desktop config/includes.chroot/usr/share/applications
 # importing Tor keys
 gpg --export A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89 > tor.key.chroot
 sudo mv tor.key.chroot config/archives/tor.key.chroot
-#sudo lb build
+#sudo chroot chroot apt-get update && sudo chroot apt-get dist-upgrade
+sudo lb build
