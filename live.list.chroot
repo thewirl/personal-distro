@@ -691,7 +691,7 @@ pulseaudio
 pulseaudio-module-x11
 pulseaudio-utils
 pyrit
-python
+python2.7-minimal
 python-apt
 python-apt-common
 python-aptdaemon
@@ -802,9 +802,9 @@ python-yaml
 python-zeitgeist
 python-zope.interface
 python-gdbm
-python
-python-minimal
-python3
+python2.7
+python3.4-minimal
+python3.4
 python3-apt
 python3-aptdaemon
 python3-aptdaemon.gtk3widgets
