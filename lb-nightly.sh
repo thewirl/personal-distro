@@ -22,7 +22,7 @@ fi
 sudo lb clean
 sudo lb init
 # pre-configure the base system
-sudo lb config ­-b iso --cache true --apt-recommends true --mirror-bootstrap http://ftp.us.debian.org/debian/ --distribution jessie true -a amd64  --linux-flavour=3.14-1-amd64 --binary-images iso ­­--debian-installer live --mode debian ­--debian­-installer-gui false ­­--archive-areas "main" ­­--security true --win32-loader false­--updates true 
+sudo lb config ­-b iso --cache true --apt-recommends false --mirror-bootstrap http://ftp.us.debian.org/debian/ --distribution jessie true -a amd64  --linux-flavour=3.14-1-amd64 --binary-images iso ­­--debian-installer live --mode debian ­--debian­-installer-gui false ­­--archive-areas "main" ­­--security true --win32-loader false­--updates true 
 # copying base system sources.list
 sudo cp ../sources.list.chroot config/archives/$DISTRO.list.chroot
 # copying base system live.list

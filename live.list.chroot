@@ -486,6 +486,14 @@ gvfs-daemons
 gvfs-libs:amd64
 gzip
 hamster-applet
+harden
+harden-development
+harden-environment
+harden-nids
+harden-servers
+harden-surveillance
+harden-tools
+harden-doc
 hardening-includes
 hdparm
 hicolor-icon-theme
